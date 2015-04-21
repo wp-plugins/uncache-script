@@ -1,6 +1,6 @@
 === Uncache Script ===
 Contributors: Todi.Adiatmo, Alzea
-Tags: cache, uncache
+Tags: cache, caching, wp-cache, wp-super-cache, page cache, views, yslow, quick cache
 Requires at least: 3.0.3
 Tested up to: 4.0
 Stable tag: trunk
@@ -53,7 +53,7 @@ Visit our support forum : [Tonjoo Forum](https://forum.tonjoostudio.com/thread-c
 
 == Screenshots ==
 
-1. Uncache Script
+Coming soon
 
 == Changelog ==
 
