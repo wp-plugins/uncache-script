@@ -3,12 +3,13 @@
  *Plugin Name: Simple Cache and Uncache Script
  *Plugin URI: http://www.tonjoo.com/uncache-script/
  *Description: Uncache your script / css after plugin update.
- *Version: 1
+ *Version: 1.1.0
  *Author: Todi
  *Author URI: http://todiadiyatmo.com/
  *License: GPLv2
  *
 */
+
 defined( 'ABSPATH' ) OR exit;
 define('UNCACHE_SCRIPT_DIR',plugin_dir_path( __FILE__ ) );
 
@@ -73,7 +74,7 @@ function tonjoo_scu_uninstall()
 
 register_uninstall_hook( __FILE__, 'tonjoo_scu_uninstall' );
 
-include UNCACHE_SCRIPT_DIR.'/theme-options.php';
+include UNCACHE_SCRIPT_DIR.'/us-theme-options.php';
 
 add_action( 'admin_bar_menu', 'make_parent_node', 999 );
 function make_parent_node( $wp_admin_bar ) {
@@ -87,7 +88,7 @@ function make_parent_node( $wp_admin_bar ) {
   $argsx = array(
 		'id'     => 'uncache-script-toolbar-child',
 		'title'  => 'Uncache',
-         'href'  => 'http://localhost/work/tonjooplugin/wp-admin/options-general.php?page=uncache-script/theme-options.php&act=update',
+         'href'  => 'http://localhost/work/tonjooplugin/wp-admin/options-general.php?page=uncache-script/us-theme-options.php&act=update',
 		'parent' => 'uncache-script-toolbar',
 	);
 	$wp_admin_bar->add_node( $argsx );
