@@ -8,9 +8,9 @@ add_action('admin_enqueue_scripts', 'us_script');
 
 function us_script() {
   wp_enqueue_style( 'us_style_css', plugins_url('/assets/us-admin.css', __FILE__), array(), null, 'all' );
-  wp_enqueue_style( 'grid', plugins_url('/assets/simplegrid.css', __FILE__), array(), null, 'all' );
+  wp_enqueue_style( 'grid', plugins_url('/assets/uikit.css', __FILE__), array(), null, 'all' );
 
-  wp_enqueue_script( 'us_script_js', plugins_url('/assets/us-admin.js', __FILE__), array('jquery'), '20120206', true );
+  wp_enqueue_script( 'us_script_js', plugins_url('/assets/uikit.js', __FILE__), array('jquery'), '20120206', true );
 }
 
 function scu_register_and_build_fields() {
@@ -23,9 +23,9 @@ function scu_create_theme_options_page() {
 
 function options_page_fn() {
 ?>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-8">
+
+    <div class="uk-grid">
+      <div class="uk-width-7-10">
         <div class="us-option-wrapper">
          <div id="us-theme-options-wrap" class="widefat-us">
             <div class="icon32" id="icon-tools"></div>
@@ -84,128 +84,129 @@ function options_page_fn() {
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <div class="us-postbox-container">
-        <div class="metabox-holder" style="padding-top:0px;">
-          <div class="meta-box-sortables ui-sortable">
+    <div class="uk-width-3-10">
+      <div class="ads-box-wrapper">
+        <div class="us-postbox-container">
+          <div class="metabox-holder" style="padding-top:0px;">
+            <div class="meta-box-sortables ui-sortable">
 
-            <!-- ADS -->
-              <div class="postbox">
-              <script type="text/javascript">
-                /**
-                 * Setiap dicopy-paste, yang find dan dirubah adalah
-                 * - var pluginName
-                 * - premium_exist
-                 */
+              <!-- ADS -->
+                <div class="postbox">
+                <script type="text/javascript">
+                  /**
+                   * Setiap dicopy-paste, yang find dan dirubah adalah
+                   * - var pluginName
+                   * - premium_exist
+                   */
 
-                jQuery(function(){
-                  var pluginName = "frs";
-                  var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName;
-                  var promoFirst = new Array();
-                  var promoSecond = new Array();
+                  jQuery(function(){
+                    var pluginName = "frs";
+                    var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName;
+                    var promoFirst = new Array();
+                    var promoSecond = new Array();
 
-                  <?php if(function_exists('is_frs_premium_exist')): ?>
-                  var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName + '&premium=true';
-                  <?php endif ?>
+                    <?php if(function_exists('is_frs_premium_exist')): ?>
+                    var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName + '&premium=true';
+                    <?php endif ?>
 
-                  // strpos function
-                  function strpos(haystack, needle, offset) {
-                    var i = (haystack + '')
-                      .indexOf(needle, (offset || 0));
-                    return i === -1 ? false : i;
-                  }
+                    // strpos function
+                    function strpos(haystack, needle, offset) {
+                      var i = (haystack + '')
+                        .indexOf(needle, (offset || 0));
+                      return i === -1 ? false : i;
+                    }
 
-                  jQuery.ajax({url: url, dataType:'jsonp'}).done(function(data){
+                    jQuery.ajax({url: url, dataType:'jsonp'}).done(function(data){
 
-                    if(typeof data =='object')
-                    {
-                      var fristImg, fristUrl;
+                      if(typeof data =='object')
+                      {
+                        var fristImg, fristUrl;
 
-                        // looping jsonp object
-                      jQuery.each(data, function(index, value){
+                          // looping jsonp object
+                        jQuery.each(data, function(index, value){
 
-                        <?php if(! function_exists('is_frs_premium_exist')): ?>
+                          <?php if(! function_exists('is_frs_premium_exist')): ?>
 
-                        fristImg = pluginName + '-premium-img';
-                        fristUrl = pluginName + '-premium-url';
+                          fristImg = pluginName + '-premium-img';
+                          fristUrl = pluginName + '-premium-url';
 
-                        // promoFirst
-                        if(index == fristImg)
-                          {
-                            promoFirst['img'] = value;
-                          }
-
-                          if(index == fristUrl)
-                          {
-                            promoFirst['url'] = value;
-                          }
-
-                          <?php else: ?>
-
-                          if(! fristImg)
-                          {
-                            // promoFirst
-                          if(strpos(index, "-img"))
+                          // promoFirst
+                          if(index == fristImg)
                             {
                               promoFirst['img'] = value;
-
-                              fristImg = index;
                             }
 
-                            if(strpos(index, "-url"))
+                            if(index == fristUrl)
                             {
                               promoFirst['url'] = value;
-
-                              fristUrl = index;
                             }
-                          }
 
-                          <?php endif; ?>
+                            <?php else: ?>
 
-                        // promoSecond
-                        if(strpos(index, "-img") && index != fristImg)
-                          {
-                            promoSecond['img'] = value;
-                          }
+                            if(! fristImg)
+                            {
+                              // promoFirst
+                            if(strpos(index, "-img"))
+                              {
+                                promoFirst['img'] = value;
 
-                          if(strpos(index, "-url") && index != fristUrl)
-                          {
-                            promoSecond['url'] = value;
-                          }
-                      });
+                                fristImg = index;
+                              }
 
-                      //promo_1
-                      jQuery("#promo_1 img").attr("src",promoFirst['img']);
-                      jQuery("#promo_1 a").attr("href",promoFirst['url']);
+                              if(strpos(index, "-url"))
+                              {
+                                promoFirst['url'] = value;
 
-                      //promo_2
-                      jQuery("#promo_2 img").attr("src",promoSecond['img']);
-                      jQuery("#promo_2 a").attr("href",promoSecond['url']);
-                    }
+                                fristUrl = index;
+                              }
+                            }
+
+                            <?php endif; ?>
+
+                          // promoSecond
+                          if(strpos(index, "-img") && index != fristImg)
+                            {
+                              promoSecond['img'] = value;
+                            }
+
+                            if(strpos(index, "-url") && index != fristUrl)
+                            {
+                              promoSecond['url'] = value;
+                            }
+                        });
+
+                        //promo_1
+                        jQuery("#promo_1 img").attr("src",promoFirst['img']);
+                        jQuery("#promo_1 a").attr("href",promoFirst['url']);
+
+                        //promo_2
+                        jQuery("#promo_2 img").attr("src",promoSecond['img']);
+                        jQuery("#promo_2 a").attr("href",promoSecond['url']);
+                      }
+                    });
                   });
-                });
-              </script>
+                </script>
 
-              <!-- <h3 class="hndle"><span>This may interest you</span></h3> -->
-              <div class="inside" style="margin: 23px 10px 6px 10px;">
-                <div id="promo_1" style="text-align: center;padding-bottom:17px;">
-                  <a href="https://tonjoostudio.com" target="_blank">
-                    <img src="<?php echo plugins_url(FRS_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" <?php if(! function_exists('is_frs_premium_exist')): ?> data-step="8" data-intro="If you like this slider, please consider the premium version to support us and get all the skins.<b>Fluid Responsive Slideshow</b> !" <?php endif ?>>
-                  </a>
+                <!-- <h3 class="hndle"><span>This may interest you</span></h3> -->
+                <div class="inside" style="margin: 23px 10px 6px 10px;">
+                  <div id="promo_1" style="text-align: center;padding-bottom:17px;">
+                    <a href="https://tonjoostudio.com" target="_blank">
+                      <img src="<?php echo plugins_url(FRS_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" <?php if(! function_exists('is_frs_premium_exist')): ?> data-step="8" data-intro="If you like this slider, please consider the premium version to support us and get all the skins.<b>Fluid Responsive Slideshow</b> !" <?php endif ?>>
+                    </a>
+                  </div>
+                  <div id="promo_2" style="text-align: center;">
+                    <a href="https://tonjoostudio.com" target="_blank">
+                      <img src="<?php echo plugins_url(FRS_DIR_NAME."/assets/loading-big.gif") ?>" width="100%">
+                    </a>
+                  </div>
                 </div>
-                <div id="promo_2" style="text-align: center;">
-                  <a href="https://tonjoostudio.com" target="_blank">
-                    <img src="<?php echo plugins_url(FRS_DIR_NAME."/assets/loading-big.gif") ?>" width="100%">
-                  </a>
-                </div>
-              </div>
+               </div>
              </div>
            </div>
          </div>
        </div>
      </div>
    </div>
- </div>
 
 
 

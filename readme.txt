@@ -53,12 +53,9 @@ Visit our support forum : [Tonjoo Forum](https://forum.tonjoostudio.com/thread-c
 
 == Screenshots ==
 
-screenshot-1.png
+Coming soon
 
 == Changelog ==
-
-= 1.1.0 =
-* Add ads sidebar and admin option styling
 
 = 1.0 =
 * Intial Release
