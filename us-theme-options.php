@@ -8,7 +8,6 @@ add_action('admin_enqueue_scripts', 'us_script');
 
 function us_script() {
   wp_enqueue_style( 'us_style_css', plugins_url('/assets/us-admin.css', __FILE__), array(), null, 'all' );
-  wp_enqueue_style( 'grid', plugins_url('/assets/uikit.css', __FILE__), array(), null, 'all' );
 
   wp_enqueue_script( 'us_script_js', plugins_url('/assets/uikit.js', __FILE__), array('jquery'), '20120206', true );
 }
@@ -24,8 +23,6 @@ function scu_create_theme_options_page() {
 function options_page_fn() {
 ?>
 
-    <div class="uk-grid">
-      <div class="uk-width-7-10">
         <div class="us-option-wrapper">
          <div id="us-theme-options-wrap" class="widefat-us">
             <div class="icon32" id="icon-tools"></div>
@@ -83,15 +80,13 @@ function options_page_fn() {
          </form>
         </div>
       </div>
-    </div>
-    <div class="uk-width-3-10">
       <div class="ads-box-wrapper">
         <div class="us-postbox-container">
           <div class="metabox-holder" style="padding-top:0px;">
             <div class="meta-box-sortables ui-sortable">
 
               <!-- ADS -->
-                <div class="postbox">
+                <div class="us-postbox">
                 <script type="text/javascript">
                   /**
                    * Setiap dicopy-paste, yang find dan dirubah adalah
@@ -205,8 +200,6 @@ function options_page_fn() {
            </div>
          </div>
        </div>
-     </div>
-   </div>
 
 
 

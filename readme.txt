@@ -53,7 +53,7 @@ Visit our support forum : [Tonjoo Forum](https://forum.tonjoostudio.com/thread-c
 
 == Screenshots ==
 
-1. Uncache Script simple admin page
+Coming soon
 
 == Changelog ==
 
