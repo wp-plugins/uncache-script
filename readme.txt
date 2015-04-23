@@ -53,7 +53,7 @@ Visit our support forum : [Tonjoo Forum](https://forum.tonjoostudio.com/thread-c
 
 == Screenshots ==
 
-Coming soon
+1. Uncache Script Option
 
 == Changelog ==
 
