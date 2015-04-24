@@ -27,7 +27,7 @@ You can try the plugin on this url: http://coba.tonjoostudio.com
 
 *if you have any questions, comment, customization request or suggestion please contact us via our [Tonjoo Forum](https://forum.tonjoostudio.com/thread-category/uncache-script/)
 
-Find more detail on our official plugin page: [Uncache Script](https://tonjoostudio.com/addons/uncache-script "visit Tonjoo plugin website")
+Find more detail and guide please visit [Uncache Script manual page](https://tonjoostudio.com/addons/uncache-script/#manual "visit Tonjoo plugin website")
 Or you can find our best plugins at [Tonjoo Studio](https://tonjoostudio.com "visit Tonjoo Studio")
 
 We can also modify your WordPress plugins according to your needs. Visit us: [Tonjoo WordPress Developer](https://tonjoo.com "Visit Tonjoo Dev Website")
@@ -53,7 +53,7 @@ Visit our support forum : [Tonjoo Forum](https://forum.tonjoostudio.com/thread-c
 
 == Screenshots ==
 
-1. Uncache Script Option
+Coming soon
 
 == Changelog ==
 
