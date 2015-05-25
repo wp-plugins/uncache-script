@@ -3,7 +3,7 @@
  *Plugin Name: Simple Cache and Uncache Script
  *Plugin URI: http://www.tonjoo.com/uncache-script/
  *Description: Uncache your script / css after plugin update.
- *Version: 1.1.0
+ *Version: 1.2.0
  *Author: Todi
  *Author URI: http://todiadiyatmo.com/
  *License: GPLv2

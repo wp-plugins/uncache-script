@@ -57,7 +57,8 @@ Coming soon
 
 == Changelog ==
 
+= 1.2 =
+* Fix href bug
+
 = 1.0 =
 * Intial Release
-
-
