@@ -10,7 +10,8 @@
  *
 */
 
-defined( 'ABSPATH' ) OR exit;
+defined('ABSPATH' ) OR exit;
+define("US_VERSION", '1.2.0');
 define('UNCACHE_SCRIPT_DIR',plugin_dir_path( __FILE__ ) );
 
 add_filter( 'script_loader_src', 'tonjoo_scu_script',10,2);
