@@ -88,7 +88,7 @@ function make_parent_node( $wp_admin_bar ) {
   $argsx = array(
 		'id'     => 'uncache-script-toolbar-child',
 		'title'  => 'Uncache',
-         'href'  => 'http://localhost/work/tonjooplugin/wp-admin/options-general.php?page=uncache-script/us-theme-options.php&act=update',
+    'href'  =>  '/wp-admin/options-general.php?page=uncache-script/us-theme-options.php&act=update',
 		'parent' => 'uncache-script-toolbar',
 	);
 	$wp_admin_bar->add_node( $argsx );
