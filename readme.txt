@@ -25,12 +25,13 @@ You can try the plugin on this url: http://coba.tonjoostudio.com
 * username: coba
 * password: 123456
 
-*If you have any questions, comment, customization request or suggestion please contact us via our [Tonjoo Forum](https://forum.tonjoostudio.com/thread-category/uncache-script/)
+*If you have any questions, comment, customization request or suggestion please contact us via our <a href="https://forum.tonjoostudio.com/thread-category/uncache-script/" title="Tonjoo Forum" rel="friend">Tonjoo Forum</a>
 
-Find more detail and guide please visit [Uncache Script manual page](https://tonjoostudio.com/addons/uncache-script/?utm_source=wp_org&utm_medium=link&utm_campaign=uc "visit Tonjoo plugin website")
-Or you can find our best plugins at <a href="https://tonjoostudio.com/" title="Tonjoo" rel="friend">Tonjoo Studio</a>
+Find more detail and guide please visit <a href="https://tonjoostudio.com/addons/uncache-script/?utm_source=wp_org&utm_medium=link&utm_campaign=uc" title="visit Tonjoo plugin website" rel="friend">Uncache Script Manual Page</a>
 
-We can also modify your WordPress plugins according to your needs. Visit us: [Tonjoo WordPress Developer](https://tonjoo.com "Visit Tonjoo Dev Website")
+Or you can find our best plugins at <a href="https://tonjoostudio.com/" title="Tonjoo Studio" rel="friend">Tonjoo Studio</a>
+
+We can also modify your WordPress plugins according to your needs. Visit us: <a href="https://tonjoo.com" title="Visit Tonjoo Dev Website" rel="friend">Tonjoo WordPress Developer</a> 
 
 **Usage Instruction**
 
